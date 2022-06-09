@@ -7,14 +7,43 @@
 
 # зеленый, красный, желтый, белый и черный
 #крысы, коровы, тигра, зайца, дракона, змеи, лошади, овцы, обезьяны, курицы, собаки и свиньи
-collor = ["G", "R", "Y", "W", "B"]
-animal = ["rat", "ox", "tiger", "rabbit", "dragon", "snake", "horse", "GOAT", "monkey", "rooster", "dog", "pig"]
 year = int( input( "Enter year " ) )
 sh = ( year - 1984 )
-collorTemp = sh // 12 % 5
+collorTemp = sh % 60
 
-for i in range(5):
-    if collorTemp == i:
-        for j in range(12):
-            if sh % 12 == j:
-                print("YEAR IS", collor[i], animal[j])
+print("YEAR IS", end=" ")
+if (collorTemp >= 0) and (collorTemp < 12):
+    print("Green", end=" ")
+elif (collorTemp >= 12) and (collorTemp < 24):
+    print("Red", end=" ")
+elif (collorTemp >= 24) and (collorTemp < 36):
+    print("Yellow", end=" ")
+elif (collorTemp >= 36) and (collorTemp < 48):
+    print("White", end=" ")
+elif (collorTemp >= 48) and (collorTemp < 60):
+    print("Black", end=" ")
+
+if sh % 12 == 11:
+    print("pig", end=" ")
+elif sh % 12 == 0:
+    print("rat", end=" ")
+elif sh % 12 == 1:
+    print("ox", end=" ")
+elif sh % 12 == 2:
+    print("tiger", end=" ")
+elif sh % 12 == 3:
+    print("rabbit", end=" ")
+elif sh % 12 == 4:
+    print("dragon", end=" ")
+elif sh % 12 == 5:
+    print("snake", end=" ")
+elif sh % 12 == 6:
+    print("horse", end=" ")
+elif sh % 12 == 7:
+    print("GOAT", end=" ")
+elif sh % 12 == 8:
+    print("monkey", end=" ")
+elif sh % 12 == 9:
+    print("rooster", end=" ")
+elif sh % 12 == 10:
+    print("dog", end=" ")
